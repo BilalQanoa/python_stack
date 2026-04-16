@@ -17,6 +17,8 @@ z = [ {'x': 10, 'y': 20} ]
 x [1][0] = 15 # 1
 # print(x)
 
+print(sports_directory['basketball'][-1])
+
 students[0]['last_name'] = "Bryant" #2
 # print(students)
 
