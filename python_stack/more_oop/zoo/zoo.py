@@ -47,6 +47,7 @@ class Lion(Animal):
         super().display_info()
         print(f"Roar Strength: {self.roar_strength}")
 
+# --------------------------------------------------------------------------------
 
 # child class
 class Tiger(Animal):
