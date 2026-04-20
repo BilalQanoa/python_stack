@@ -33,7 +33,7 @@ class Animal:
 
 # --------------------------------------------------------------------------------
 
-# child class
+# child class - Lion 
 class Lion(Animal):
     def __init__(self, name, age, health, happiness, roar_strength):
         super().__init__(name, age, health, happiness)
@@ -49,7 +49,7 @@ class Lion(Animal):
 
 # --------------------------------------------------------------------------------
 
-# child class
+# child class - Tiger
 class Tiger(Animal):
     def __init__(self, name, age, health, happiness, num_stripes):
         super().__init__(name, age, health, happiness)
