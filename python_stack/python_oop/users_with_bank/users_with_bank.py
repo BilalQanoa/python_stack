@@ -1,13 +1,13 @@
 
-import bank_account
+from bank_account import BankAccount
 
 class User:
     def __init__(self, name, email):
         self.name = name
         self.email = email
         self.accounts = {
-            'account1': bank_account.BankAccount(int_rate=0.02, balance=0),
-            'account2': bank_account.BankAccount(int_rate=0.03, balance=0)
+            'account1': BankAccount(int_rate=0.02, balance=0),
+            'account2': BankAccount(int_rate=0.03, balance=0)
         }
 
 
