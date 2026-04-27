@@ -1,8 +1,8 @@
-import zoo
+from zoo import Zoo, Lion, Tiger
 
-my_zoo = zoo.Zoo("park")
-lion1 = zoo.Lion("Simba", 5, 80, 90, "Loud")
-tiger1 = zoo.Tiger("Shere Khan", 7, 70, 85, 100)    
+my_zoo = Zoo("park")
+lion1 = Lion("Simba", 5, 80, 90, "Loud")
+tiger1 = Tiger("Shere Khan", 7, 70, 85, 100)    
 my_zoo.add_animal(lion1)
 my_zoo.add_animal(tiger1)   
 

@@ -35,6 +35,8 @@ class Animal:
 
 # child class - Lion 
 class Lion(Animal):
+
+    ## Lion (){}
     def __init__(self, name, age, health, happiness, roar_strength):
         super().__init__(name, age, health, happiness)
         self.roar_strength = roar_strength
