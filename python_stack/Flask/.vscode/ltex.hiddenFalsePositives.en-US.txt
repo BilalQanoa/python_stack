@@ -1,0 +1,2 @@
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q.container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 20px; } .box { width: 100px; height: 100px; background-color: #4CAF50; }\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q{% for i in range(num_boxes) %}\\E$"}
