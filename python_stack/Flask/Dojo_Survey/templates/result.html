@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="sidebar"></div>
+
+    <div class="wrapper">
+        <div class="header">
+            <div class="tag">Survey &mdash; Submitted</div>
+            <h1>Mission<span>Complete</span></h1>
+            <p class="subtitle">Here's a summary of your submission.</p>
+        </div>
+
+        <!-- Name hero -->
+        <div class="name-hero">
+            <div class="field-tag">01 &mdash; Warrior Name</div>
+            <div class="field-value">{{ name }}</div>
+        </div>
+
+        <!-- Info grid -->
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="field-tag">02 &mdash; Dojo Location</div>
+                <div class="field-value">{{ location }}</div>
+            </div>
+            <div class="info-card">
+                <div class="field-tag">03 &mdash; Experience Level</div>
+                <div class="field-value">
+                    <span class="level-badge">{{ level }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="section-card anim-1">
+            <div class="field-tag">04 &mdash; Favorite Languages</div>
+            {% if languages %}
+            <ul class="lang-list">
+                {% for lang in languages %}
+                <li>{{ lang }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="no-data">No languages selected.</p>
+            {% endif %}
+        </div>
+
+        <!-- Comment -->
+        <div class="section-card anim-2">
+            <div class="field-tag">05 &mdash; Comment</div>
+            <div class="comment-box">
+                {{ comment if comment else "No comment provided." }}
+            </div>
+        </div>
+
+        <div>
+            <a href="/" class="btn-back">Back to Survey</a>
+        </div>
+    </div>
+</body>
+
+</html>

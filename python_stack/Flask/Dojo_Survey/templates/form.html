@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Survey</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="sidebar"></div>
+
+    <div class="wrapper">
+        <div class="main">
+            <div class="header">
+                <div class="tag">Coding Dojo &mdash; 2025</div>
+                <h1>Champion<span>Survey</span></h1>
+                <p class="subtitle">Tell us about yourself. We'll forge your path from here.</p>
+            </div>
+
+            <div class="card">
+                <form action="/result" method="post" id="surveyForm">
+
+                    <div class="form-group">
+                        <label for="name">01 &mdash; Full Name <span class="step-num">required</span></label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="form-group">
+                        <label for="location">02 &mdash; Dojo Location <span class="step-num">required</span></label>
+                        <div class="select-wrap">
+                            <select id="location" name="location" required>
+                                
+                                <option value="" disabled selected>Choose a location...</option>
+                                <option value="Gaza">Gaza</option>
+                                <option value="Al-Quds">Al-Quds</option>
+                                <option value="Ramallah">Ramallah</option>
+                                <option value="Hebron">Hebron</option>
+                                <option value="Jenin">Jenin</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="form-group">
+                        <label>03 &mdash; Experience Level</label>
+                        <div class="radio-group" id="radioGroup">
+                            <label class="radio-label active" data-value="Beginner">
+                                <input type="radio" name="level" value="Beginner" checked>
+                                Beginner
+                            </label>
+                            <label class="radio-label" data-value="Intermediate">
+                                <input type="radio" name="level" value="Intermediate">
+                                Intermediate
+                            </label>
+                            <label class="radio-label" data-value="Advanced">
+                                <input type="radio" name="level" value="Advanced">
+                                Advanced
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="form-group">
+                        <label>04 &mdash; Favorite Languages</label>
+                        <div class="check-group" id="checkGroup">
+                            <label class="check-label" data-value="Python">
+                                <input type="checkbox" name="languages[]" value="Python">
+                                Python
+                            </label>
+                            <label class="check-label" data-value="JavaScript">
+                                <input type="checkbox" name="languages[]" value="JavaScript">
+                                JavaScript
+                            </label>
+                            <label class="check-label" data-value="PHP">
+                                <input type="checkbox" name="languages[]" value="PHP">
+                                PHP
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="form-group">
+                        <label for="comment">05 &mdash; Comment <span class="step-num">optional</span></label>
+                        <textarea id="comment" name="comment"
+                            placeholder="Leave a message for the sensei..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Survey &rarr;</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Radio toggle
+        document.querySelectorAll('.radio-label').forEach(lbl => {
+            lbl.addEventListener('click', () => {
+                document.querySelectorAll('.radio-label').forEach(l => l.classList.remove('active'));
+                lbl.classList.add('active');
+                lbl.querySelector('input').checked = true;
+            });
+        });
+
+        // Checkbox toggle
+        document.querySelectorAll('.check-label').forEach(lbl => {
+            lbl.addEventListener('click', () => {
+                lbl.classList.toggle('active');
+                const cb = lbl.querySelector('input');
+                cb.checked = !cb.checked;
+            });
+        });
+    </script>
+</body>
+
+</html>
