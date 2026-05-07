@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dojo Fruit Store - Our Fruits</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+
+<body>
+  <header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="/" class="navbar-brand d-flex align-items-center">
+          <strong>Dojo Fruit Store</strong>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Dojo Fruits</h1>
+        <p class="lead text-muted">Here are all the fruits available in our store!</p>
+        <a href="/" class="btn btn-primary my-2">Go back to Store</a>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <!-- Apple -->
+          <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{{ url_for('static', filename='img/apple.png') }}" alt="Apple">
+              <div class="card-body text-center">
+                <p class="card-text">Apple</p>
+              </div>
+            </div>
+          </div>
+          <!-- Raspberry -->
+          <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{{ url_for('static', filename='img/raspberry.png') }}" alt="Raspberry">
+              <div class="card-body text-center">
+                <p class="card-text">Raspberry</p>
+              </div>
+            </div>
+          </div>
+          <!-- Strawberry -->
+          <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{{ url_for('static', filename='img/strawberry.png') }}" alt="Strawberry">
+              <div class="card-body text-center">
+                <p class="card-text">Strawberry</p>
+              </div>
+            </div>
+          </div>
+          <!-- Blackberry (الفاكهة الرابعة المضافة) -->
+          <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="{{ url_for('static', filename='img/blackberry.png') }}" alt="Blackberry">
+              <div class="card-body text-center">
+                <p class="card-text">Blackberry</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

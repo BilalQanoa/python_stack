@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dojo Fruit Store - Receipt</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+
+<body>
+  <header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="/" class="navbar-brand d-flex align-items-center">
+          <strong>Dojo Fruit Store</strong>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mt-5">
+    <div class="alert alert-success text-center">
+      <h1>Thank you for your order!</h1>
+      <p>Order processed on: <strong>{{order_time}}</strong></p>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h4 class="card-title">Order Summary</h4>
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>Fruit Name</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for fruit, qty in order.items() %}
+            {% if qty > 0 %}
+            <tr>
+              <td>{{ fruit.capitalize() }}</td>
+              <td>{{ qty }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            <tr class="table-info">
+              <td><strong>Total Items</strong></td>
+              <td><strong>{{ total_fruits }}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title">Customer Information</h4>
+        <p><strong>Name:</strong> {{ first_name }} {{ last_name }}</p>
+        {% if student_id %}
+        <p><strong>Student ID:</strong> {{ student_id }}</p>
+        {% endif %}
+        <hr>
+        <a href="/" class="btn btn-secondary">Order More</a>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
