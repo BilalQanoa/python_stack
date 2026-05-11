@@ -9,7 +9,7 @@ def index():
 
 @app.route('/checkout', methods=['POST'])         
 def checkout():
-    # جمع البيانات في قاموس لتسهيل التعامل معها
+
     order = {
         'strawberry': int(request.form.get('strawberry', 0)),
         'raspberry': int(request.form.get('raspberry', 0)),
@@ -24,7 +24,6 @@ def checkout():
     total_fruits = sum(order.values())
     customer_name = f"{first_name} {last_name}".strip()
     
-    # طباعة الطلب في الكونسول (مطلوب في التحدي عادةً)
     print(f"Charging {customer_name} for {total_fruits} fruits.")
     
     now = datetime.now().strftime("%B %d, %Y %I:%M:%S %p")
