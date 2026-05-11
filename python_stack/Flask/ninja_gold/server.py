@@ -24,12 +24,10 @@ def process():
 
     building = request.form['building']
     if building in buildings:
-
         gold_range = buildings[building]
         earned = random.randint(gold_range[0], gold_range[1])
         
         session['gold'] += earned
-        session['moves'] += 1
         
         now = datetime.now().strftime("%Y/%m/%d %I:%M %p")
         
