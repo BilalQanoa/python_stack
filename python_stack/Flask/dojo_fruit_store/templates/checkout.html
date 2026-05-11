@@ -20,7 +20,7 @@
   <main class="container mt-5">
     <div class="alert alert-success text-center">
       <h1>Thank you for your order!</h1>
-      <p>Order processed on: <strong>{{order_time}}</strong></p>
+      <p>Order processed on: <strong>{{ session.order_time }}</strong></p>
     </div>
 
     <div class="card shadow-sm mb-4">
@@ -34,7 +34,7 @@
             </tr>
           </thead>
           <tbody>
-            {% for fruit, qty in order.items() %}
+            {% for fruit, qty in session.order.items() %}
             {% if qty > 0 %}
             <tr>
               <td>{{ fruit.capitalize() }}</td>
@@ -44,7 +44,7 @@
             {% endfor %}
             <tr class="table-info">
               <td><strong>Total Items</strong></td>
-              <td><strong>{{ total_fruits }}</strong></td>
+              <td><strong>{{ session.total_fruits }}</strong></td>
             </tr>
           </tbody>
         </table>
@@ -54,9 +54,9 @@
     <div class="card shadow-sm">
       <div class="card-body">
         <h4 class="card-title">Customer Information</h4>
-        <p><strong>Name:</strong> {{ first_name }} {{ last_name }}</p>
-        {% if student_id %}
-        <p><strong>Student ID:</strong> {{ student_id }}</p>
+        <p><strong>Name:</strong> {{ session.customer_name }}</p>
+        {% if session.student_id %}
+        <p><strong>Student ID:</strong> {{ session.student_id }}</p>
         {% endif %}
         <hr>
         <a href="/" class="btn btn-secondary">Order More</a>
