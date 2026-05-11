@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 
 app = Flask(__name__)
+app.secret_key = 'ThisIsSecret'  # Required for session management
 
 @app.route('/')
 def index():
@@ -8,9 +9,7 @@ def index():
 
 @app.route('/result', methods=['POST'])
 def result():
-
     print(request.form)
-    
     name = request.form['name']
     location = request.form['location']
     level = request.form['level']
