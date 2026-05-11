@@ -10,7 +10,6 @@ def index():
     if 'gold' not in session:
         session['gold'] = 0
         session['activities'] = []
-        session['moves'] = 0
     return render_template('index.html')
 
 @app.route('/process_money', methods=['POST'])
