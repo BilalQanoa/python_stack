@@ -4,7 +4,7 @@ import json
 import os
 
 app = Flask(__name__)
-app.secret_key = 'ajfgdf;rngj56476594976'
+app.secret_key = 'supersecretkey'
 
 LEADERBOARD_FILE = 'leaderboard.json'
 
@@ -21,14 +21,13 @@ def get_leaderboard():
 def add_to_leaderboard(name, attempts):
     scores = get_leaderboard()
     scores.append({'name': name, 'attempts': attempts})
-    # Sort by attempts (ascending)
     with open(LEADERBOARD_FILE, 'w') as f:
         json.dump(scores, f)
 
 @app.route('/')
 def index():
     if 'target_num' not in session:
-        session['target_num'] = random.randint(1, 100) # Generate random number between 1 and 100
+        session['target_num'] = random.randint(1, 100)
         session['attempts'] = 0
         session['status'] = None
         session['last_guess'] = None
@@ -41,7 +40,6 @@ def guess():
         return redirect('/')
 
     user_guess = int(request.form['guess'])
-
     session['attempts'] += 1
     session['last_guess'] = user_guess
     
