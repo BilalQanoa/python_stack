@@ -1,9 +1,9 @@
 class MyCircularQueue:  
     def __init__(self, k: int):
-    self.queue = [0] * k
-    self.head = 0
-    self.count = 0
-    self.capacity = k
+        self.queue = [0] * k
+        self.head = 0
+        self.count = 0
+        self.capacity = k
 
     def enQueue(self, value: int) -> bool:
         if self.count == self.capacity:
